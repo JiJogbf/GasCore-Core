@@ -1,11 +1,20 @@
 template<class T>
 ArrayList<T>::ArrayList(int capacity): 
+        List<T>(),
         mItems(nullptr), mCount(0),
         mCapacity(capacity) 
-{}
+{
+    mItems = new T*[mCapacity];
+    for(int i = 0; i < mCapacity; i++){
+        mItems[i] = nullptr;
+    }
+}
 
 template<class T>
 ArrayList<T>::~ArrayList(){
+    for(int i = 0; i < mCount; i++){
+        delete mItems[i];
+    }   
     delete[] mItems;
     mCount = 0;
     mCapacity = 0;
@@ -18,13 +27,17 @@ int ArrayList<T>::count(){
 
 template<class T>
 void ArrayList<T>::add(T* obj){
-    // @todo: if capacity is not 
     mItems[mCount++] = obj;
 }
 
 template<class T>
-T* ArrayList<T>::item(const int index){
+T* ArrayList<T>::get(const int index){
     return mItems[index];
+}
+
+template<class T>
+void ArrayList<T>::set(const int index, T* value){
+    mItems[index] = value;
 }
 
 template<class T>
@@ -33,11 +46,11 @@ void ArrayList<T>::remove(T* obj){
 }   
 
 template<class T>
-bool ArrayList<T>::has(T* obj){
-    for(int i = 0; i < mCount; i++){
-        if(mItems[i] == obj){
-            return true;
-        }
-    }
+Iterator<T>* ArrayList<T>::iterator(){
+    return nullptr;
+}
+
+template<class T>
+bool ArrayList<T>::contains(T* obj){
     return false;
 }

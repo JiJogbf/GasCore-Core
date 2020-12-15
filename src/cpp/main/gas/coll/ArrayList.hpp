@@ -17,9 +17,11 @@ public:
     ~ArrayList();
     int count() override;
     void add(T* obj) override;
-    T* item(const int index) override;
     void remove(T* obj) override;
-    bool has(T* obj) override;
+    T* get(const int index);
+    void set(const int index, T* value);    
+    Iterator<T>* iterator() override;
+    bool contains(T* obj) override;
 };
 
 #include "impl\ArrayList_impl.hpp"

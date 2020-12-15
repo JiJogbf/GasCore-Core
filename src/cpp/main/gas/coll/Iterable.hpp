@@ -2,6 +2,7 @@
 #define GAS_COLL_ITERABLE_HPP_15122020_222032
 
 #include "..\Object.hpp"
+#include "Iterator.hpp"
 
 namespace gas{
     namespace coll{

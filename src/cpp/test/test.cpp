@@ -47,12 +47,20 @@ void testThread(){
 }
 
 void testArrayList(){
-    gas::coll::ArrayList<int> list(12);
+    gas::coll::ArrayList<gas::str::String> list(4);
+    list.add(new gas::str::String("hello"));
+    list.add(new gas::str::String("world"));
+    std::cout << "array-list sample start" << std::endl;
+    for(int i = 0; i < list.count(); i++){
+        std::cout << *list.get(i) << std::endl;
+    }
+    std::cout << "array-list sample end" << std::endl;
 }
 
 int main(int argc, char** argv){
     testString();
     testPtr();
     testThread();
+    testArrayList();
     return 0;
 }
