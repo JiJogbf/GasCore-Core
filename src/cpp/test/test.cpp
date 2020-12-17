@@ -10,6 +10,7 @@ struct Mock{
     Mock(int data): data(data){
         std::cout << "Mock()" << std::endl;
     }
+    
     ~Mock(){
         std::cout << "~Mock()" << std::endl;
     }
@@ -38,6 +39,7 @@ void testString(){
 
 void testPtr(){
     gas::Ptr<Mock> ptr(new Mock(12));
+    gas::Ptr<Mock> newPtr = ptr;
 }
 
 void testThread(){
