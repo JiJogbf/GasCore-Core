@@ -12,11 +12,11 @@ namespace gas{
     public:
         Ptr(T* ptr);
         Ptr(Ptr& p);
+        ~Ptr() override;
         Ptr& operator=(Ptr& p);
         T& operator*();
         T* operator->();
-        operator T*();
-        ~Ptr() override;
+        operator T*();        
     };
 }
 

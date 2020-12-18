@@ -17,7 +17,11 @@ namespace gas{
     }
 
     template<class T>
-    Ptr<T>::Ptr(Ptr& p): Object(), mPtr(p.mPtr), mCount(p.mCount + 1){}
+    Ptr<T>::Ptr(Ptr& p): 
+        Object(), 
+        mPtr(p.mPtr), 
+        mCount(p.mCount + 1)
+    {}
 
     template<class T>
     Ptr<T>& Ptr<T>::operator=(Ptr& p){
