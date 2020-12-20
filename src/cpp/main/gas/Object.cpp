@@ -1,6 +1,6 @@
 #include "Object.hpp"
 
-#include "str\String.hpp"
+#include "str\Text.hpp"
 
 namespace gas{
     Object::Object(){}
@@ -8,7 +8,7 @@ namespace gas{
     Object::~Object(){}
 
     str::String* Object::toString(){
-        return new gas::str::String("");
+        return new gas::str::Text("");
     }
 
     Object* Object::clone(){

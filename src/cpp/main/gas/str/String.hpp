@@ -7,22 +7,10 @@
 namespace gas{
     namespace str{
         class String: public gas::Object{
-        protected:
-            char_p mBuffer;
-            int    mLen;
         public:
-            String(char_cp source);
-            String(const String& source);
-            ~String();        
-            operator char_p() const;
-            String& operator=(const String& source);
-            int length()const;
-            // String operator+(const String& right);
-            // Utf8String oeprator+=(const Utf8String& str);
-            // const Utf8String& operator=(const Utf8String& source)const;
-            // copy
-            // concatinations
-            // manipulations
+            virtual ~String();        
+            virtual int length() const = 0;
+            virtual char_p content() const = 0;
         };
     }
 }

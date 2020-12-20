@@ -1,4 +1,4 @@
-#include <gas/str/String.hpp>
+#include <gas/str/Text.hpp>
 #include <gas/Ptr.hpp>
 #include <gas/Ref.hpp>
 #include <gas/Thread.hpp>
@@ -34,9 +34,9 @@ namespace test{
         std::cout << "Thread finished" << std::endl;
     }
 
-    void testString(){
-        gas::str::String s = "hello world";
-        std::cout << s << std::endl;
+    void testText(){
+        gas::str::Text s = "hello world";
+        std::cout << s.content() << std::endl;
     }
 
     void testPtr(){
@@ -51,12 +51,12 @@ namespace test{
     }
 
     void testArrayList(){
-        gas::coll::ArrayList<gas::str::String> list(4);
-        list.add(new gas::str::String("hello"));
-        list.add(new gas::str::String("world"));
+        gas::coll::ArrayList<gas::str::Text> list(4);
+        list.add(new gas::str::Text("hello"));
+        list.add(new gas::str::Text("world"));
         std::cout << "array-list sample start" << std::endl;
         for(int i = 0; i < list.count(); i++){
-            std::cout << *list.get(i) << std::endl;
+            std::cout << *list.get(i)->content() << std::endl;
         }
         std::cout << "array-list sample end" << std::endl;
     }
@@ -69,7 +69,7 @@ namespace test{
 
 int main(int argc, char** argv){
     using namespace test;
-    testString();
+    testText();
     testPtr();
     testRef();
     testThread();
