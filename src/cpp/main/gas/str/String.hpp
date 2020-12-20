@@ -14,8 +14,9 @@ namespace gas{
             String(char_cp source);
             String(const String& source);
             ~String();        
-            operator char_p()const;
+            operator char_p() const;
             String& operator=(const String& source);
+            int length()const;
             // String operator+(const String& right);
             // Utf8String oeprator+=(const Utf8String& str);
             // const Utf8String& operator=(const Utf8String& source)const;

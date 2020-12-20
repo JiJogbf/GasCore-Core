@@ -24,6 +24,12 @@ String::~String(){
     mLen = 0;
 }   
 
+String::operator char_p() const{
+    // @todo: handle nullptr case maybe done 
+    // via virtual wrapper
+    return mBuffer;
+}
+
 String& String::operator=(const String& source){
     if(this != &source){
         delete mBuffer;
@@ -36,10 +42,8 @@ String& String::operator=(const String& source){
     return *this;
 }
 
-String::operator char_p() const{
-    // @todo: handle nullptr case maybe done 
-    // via virtual wrapper
-    return mBuffer;
+int String::length() const{
+    return mLen;
 }
 
 }
