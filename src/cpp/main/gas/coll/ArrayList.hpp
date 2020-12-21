@@ -6,6 +6,8 @@
 namespace gas{
 namespace coll{
 
+// @todo: Replace raw ptr's to Ptr<T> classes
+
 template<class T>
 class ArrayList: public List<T>{
 private:

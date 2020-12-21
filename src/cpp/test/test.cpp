@@ -4,6 +4,7 @@
 #include <gas/Thread.hpp>
 #include <gas/Task.hpp>
 #include <gas/coll/ArrayList.hpp>
+#include <gas/coll/Array.hpp>
 #include <iostream>
 
 namespace test{
@@ -65,6 +66,11 @@ namespace test{
         Mock mock(228);
         gas::Ref<Mock> m(mock);
     }
+
+    void testArray(){
+        gas::coll::Array<int> arr(10);
+        arr.add(1).add(2).add(3);
+    }
 }
 
 int main(int argc, char** argv){
@@ -72,6 +78,7 @@ int main(int argc, char** argv){
     testText();
     testPtr();
     testRef();
+    testArray();
     testThread();
     testArrayList();
     return 0;
