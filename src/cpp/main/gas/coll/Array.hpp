@@ -5,6 +5,7 @@
 namespace gas{
 namespace coll{
 
+
 template<class T>
 class Array: public gas::Object{
 private:
@@ -54,7 +55,6 @@ Array<T>& Array<T>::set(const int index, const T& val){
     mItems[index] = val;
     return *this;
 }
-
 
 
 }

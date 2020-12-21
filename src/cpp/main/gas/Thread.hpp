@@ -4,8 +4,6 @@
 #include "Object.hpp"
 #include "Task.hpp"
 
-#include <windows.h>
-
 namespace gas{
     namespace impl{
         class ThreadImpl;
