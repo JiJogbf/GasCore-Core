@@ -5,9 +5,33 @@
 #include <gas/Task.hpp>
 #include <gas/coll/ArrayList.hpp>
 #include <gas/coll/Array.hpp>
+
+#include <gas/test/Tester.hpp>
+#include <gas/test/TestCase.hpp>
+#include <gas/test/TestCaseDecorator.hpp>
+
 #include <iostream>
 
 namespace test{
+    class MockTestCase: public gas::test::TestCase{
+    public:
+        MockTestCase();
+        ~MockTestCase() override;
+        void execute() override;
+    };
+
+    MockTestCase::MockTestCase(){
+
+    }
+    
+    MockTestCase::~MockTestCase(){
+
+    }
+    
+    void MockTestCase::execute(){
+        std::cout << "MockTestCase.execute()" << std::endl;
+    }
+
     struct Mock{
         int data;
         Mock(int data): data(data){
@@ -71,6 +95,11 @@ namespace test{
         gas::coll::Array<int> arr(10);
         arr.add(1).add(2).add(3);
     }
+
+    void testTester(){
+        gas::test::Tester tester;
+        tester.add(new MockTestCase());
+    }
 }
 
 int main(int argc, char** argv){
@@ -81,5 +110,6 @@ int main(int argc, char** argv){
     testArray();
     testThread();
     testArrayList();
+    testTester();
     return 0;
 }
