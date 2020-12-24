@@ -20,13 +20,9 @@ namespace test{
         void execute() override;
     };
 
-    MockTestCase::MockTestCase(){
-
-    }
+    MockTestCase::MockTestCase(){}
     
-    MockTestCase::~MockTestCase(){
-
-    }
+    MockTestCase::~MockTestCase(){}
     
     void MockTestCase::execute(){
         std::cout << "MockTestCase.execute()" << std::endl;
