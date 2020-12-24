@@ -5,10 +5,10 @@
 #include <gas/Task.hpp>
 #include <gas/coll/ArrayList.hpp>
 #include <gas/coll/Array.hpp>
-
 #include <gas/test/Tester.hpp>
 #include <gas/test/TestCase.hpp>
 #include <gas/test/TestCaseDecorator.hpp>
+#include "ArrayTestCase.hpp"
 
 #include <iostream>
 
@@ -98,7 +98,7 @@ namespace test{
     }
 }
 
-int main(int argc, char** argv){
+void runOldTests(){
     using namespace test;
     testText();
     testPtr();
@@ -107,5 +107,14 @@ int main(int argc, char** argv){
     testThread();
     testArrayList();
     testTester();
+}
+
+int main(int argc, char** argv){
+    runOldTests();
+ 
+    gas::test::Tester tester;
+    tester.add(new gas::test::ArrayTestCase());
+    tester.run();
+
     return 0;
 }

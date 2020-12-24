@@ -8,9 +8,10 @@ aux_source_directory(src/cpp/main/gas/test CoreMainSrc)
 aux_source_directory(src/cpp/main/gas/impl CoreMainSrc)
 aux_source_directory(src/cpp/main/gas/impl/win CoreMainSrc)
 aux_source_directory(src/cpp/test/gas CoreTestLibSrc)
+aux_source_directory(src/cpp/test CoreTestLibSrc)
 
 add_library(Core ${CoreMainSrc})
-add_executable(CoreTests src/cpp/test/test.cpp)
+add_executable(CoreTests src/cpp/test/test.cpp ${CoreTestLibSrc})
 
 target_include_directories(Core PUBLIC src/cpp/main)
 target_include_directories(CoreTests PUBLIC src/cpp/test)
