@@ -1,0 +1,4 @@
+[ ] #1 future tests - add new tests to testcase.
+[ ] #2 implementing this test case.
+       wich will operate with array 
+       of primitive types

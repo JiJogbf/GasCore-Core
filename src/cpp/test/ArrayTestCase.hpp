@@ -9,6 +9,12 @@ namespace gas{
             ArrayTestCase();
             ~ArrayTestCase();
             void execute() override;
+        public:
+            void creatingArrayStaticaly();
+            /* @todo: #1 future tests - add new tests to testcase */
+            // void creatingArrayInHeap();
+            // void appendingElementsToArray();
+            // void retriveElementsFromArray();
         };
     }
 }
