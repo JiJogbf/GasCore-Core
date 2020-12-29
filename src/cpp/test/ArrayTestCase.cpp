@@ -1,5 +1,7 @@
 #include "ArrayTestCase.hpp"
 
+#include <gas\coll\Array.hpp>
+
 namespace gas{
 namespace test{
 
@@ -11,7 +13,8 @@ void ArrayTestCase::execute(){
     creatingArrayStaticaly();    
 }
 
-void creatingArrayStaticaly(){
+void ArrayTestCase::creatingArrayStaticaly(){
+    gas::coll::Array<int> intArray(10);
     /*@ todo: #2 implementing this test case.
                  wich will operate with array 
                  of primitive types */
