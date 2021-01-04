@@ -4,3 +4,4 @@
        of primitive types
 [ ] #3 Create safe decorator for Array class
 [ ] #4 adding formatting here
+[ ] #5 change stream logic latter 
