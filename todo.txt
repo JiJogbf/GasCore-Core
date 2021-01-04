@@ -2,3 +2,5 @@
 [ ] #2 implementing this test case.
        wich will operate with array 
        of primitive types
+[ ] #3 Create safe decorator for Array class
+[ ] #4 adding formatting here
