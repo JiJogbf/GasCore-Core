@@ -13,7 +13,7 @@ namespace gas{
         if(mTask == nullptr){
             mTask = new EmptyTask();
         }
-        // @todo: adding platform specific defines here
+        // @todo #6 adding platform specific defines here
         mImpl = new impl::win::WinThreadImpl(mTask);
     }
 

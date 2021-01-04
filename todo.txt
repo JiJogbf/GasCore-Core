@@ -1,7 +1,11 @@
-[ ] #1 future tests - add new tests to testcase.
-[ ] #2 implementing this test case.
+[x] #1 future tests - add new tests to testcase.
+[x] #2 implementing this test case.
        wich will operate with array 
-       of primitive types
+        of primitive types
+
+       
 [ ] #3 Create safe decorator for Array class
 [ ] #4 adding formatting here
 [ ] #5 change stream logic latter 
+[ ] #6 adding platform specific defines here
+[ ] #7 add compiler define for unicode mode 
