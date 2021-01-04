@@ -20,10 +20,8 @@ public:
     Array<T>& add(Array<T>& arr);
     T& get(const int index);
     Array<T>& set(const int index, const T& val);
-    int length()const;
-    int capacity()const;
-    
-    // todo: overload operator's
+    int length() const;
+    int capacity() const;
 };
 
 template<class T> 
