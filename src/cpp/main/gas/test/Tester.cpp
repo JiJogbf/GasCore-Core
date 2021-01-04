@@ -1,9 +1,14 @@
 #include "Tester.hpp"
 
+#include "NullLogger.hpp"
+
 namespace gas{
 namespace test{
 
-Tester::Tester(): Object(), mCases(){
+
+Tester::Tester(Logger* logger): Object(), mLogger(logger){}
+
+Tester::Tester(): Tester(new NullLogger()){
     if(mCases.capacity() <= 1){
         mCases.reserve(8);
     }

@@ -8,7 +8,7 @@ namespace gas{
         private:
             TestCase* mOrigin;
         public:
-            TestCaseDecorator(TestCase* origin);
+            TestCaseDecorator(TestCase* origin, Logger* logger);
             ~TestCaseDecorator() override;
             void execute() override;
         };

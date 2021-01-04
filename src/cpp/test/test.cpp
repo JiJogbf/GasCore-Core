@@ -8,7 +8,10 @@
 #include <gas/test/Tester.hpp>
 #include <gas/test/TestCase.hpp>
 #include <gas/test/TestCaseDecorator.hpp>
+#include <gas/test/Logger.hpp>
+#include <gas/test/FileLogger.hpp>
 #include "ArrayTestCase.hpp"
+#include "FileLoggerTestCase.hpp"
 
 #include <iostream>
 
@@ -20,7 +23,7 @@ namespace test{
         void execute() override;
     };
 
-    MockTestCase::MockTestCase(){}
+    MockTestCase::MockTestCase(): TestCase(nullptr){}
     
     MockTestCase::~MockTestCase(){}
     
@@ -115,8 +118,10 @@ void runOldTests(){
 int main(int argc, char** argv){
     runOldTests();
  
-    gas::test::Tester tester;
-    tester.add(new gas::test::ArrayTestCase());
+    gas::test::Logger* logger = new gas::test::FileLogger("result.log");
+    gas::test::Tester tester(logger);
+    tester.add(new gas::test::ArrayTestCase(logger));
+    tester.add(new gas::test::FileLoggerTestCase(logger));
     tester.run();
 
     return 0;

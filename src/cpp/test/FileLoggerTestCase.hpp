@@ -1,20 +1,17 @@
-#pragma once
+#pragma once 
 
-#include <gas\test\Logger.hpp>
 #include <gas\test\TestCase.hpp>
+#include <gas\test\Logger.hpp>
 
 namespace gas{
     namespace test{
-        class ArrayTestCase: public TestCase{
+        class FileLoggerTestCase: public TestCase{
         public:
-            ArrayTestCase(Logger* logger);
-            ~ArrayTestCase();
+            FileLoggerTestCase(Logger* logger);
+            ~FileLoggerTestCase();
             void execute() override;
         public:
-            void creatingArrayStaticaly();
-            void appendingElementsToArray();
-            void appendingRangeElements();
-            
+            void performLoggingAndCheckLoggedText();
             /* @todo: #1 future tests - add new tests to testcase */
             // void creatingArrayInHeap();
             // void appendingElementsToArray();
