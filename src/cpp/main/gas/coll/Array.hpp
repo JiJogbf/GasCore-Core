@@ -9,8 +9,8 @@ namespace coll{
 template<class T>
 class Array: public gas::Object{
 private:
-    T* mItems;
     int mSize;
+    T* mItems;
 public:
     Array(int count);
     ~Array();
@@ -22,11 +22,10 @@ public:
     // todo: overload operator's
 };
 
-
-template<class T>
-Array<T>::Array(int count): mItems(nullptr), mSize(count){
-    mItems = new T[mSize];
-}
+template<class T> 
+Array<T>::Array(int count): 
+    mSize(count), mItems(new T[mSize])
+{}
 
 template<class T>
 Array<T>::~Array(){
@@ -47,7 +46,7 @@ Array<T>& Array<T>::add(Array<T>& arr){
 template<class T>
 T& Array<T>::get(const int index){
     // @todo: add range checking here
-    mItems[index];
+    return mItems[index];
 }
 
 template<class T>
