@@ -4,11 +4,22 @@
 #include "Object.hpp"
 
 namespace gas{
+    /**
+    * @brief Reference class for some types
+    */
     template<class T>
     class Ref: public Object{
         T& mValue;
     public:
+        /**
+         * @brief ctor for Reference value
+         * @param val real object or value for wich we wana create referenc
+        */
         Ref(T& val);
+
+        /**
+         * @brief access referenced value
+        */
         T& value();
     };
 
