@@ -4,12 +4,12 @@
 #include "Object.hpp"
 
 namespace gas{
+
+    /**
+     * @brief Task executed in thread
+    */
     struct Task: public Object{
         virtual void execute() = 0;
-    };
-
-    struct EmptyTask: public Task{
-        void execute(){}
     };
 }
 
