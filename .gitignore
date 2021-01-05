@@ -9,3 +9,5 @@ Makefile
 CMakeFiles
 .vscode
 *.log
+html
+latex
