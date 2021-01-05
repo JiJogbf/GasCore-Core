@@ -15,6 +15,11 @@ namespace test{
 struct Logger: public Object{
 public:
     virtual ~Logger() = 0;
+
+    /**
+     * Write text in parameter to log
+     * @param text portion of text wich will be writen in log
+    */
     virtual Logger& print(const std::string& text) = 0;
 };
 

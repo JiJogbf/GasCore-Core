@@ -6,7 +6,7 @@ namespace gas{
     namespace test{
 
         /**
-         * Decorator for TestCase.
+         * @brief Decorator for TestCase.
          * 
          * Use when you need customize 
          * existed casses with new logic
