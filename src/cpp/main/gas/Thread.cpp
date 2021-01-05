@@ -1,5 +1,7 @@
 #include "Thread.hpp"
 
+#include "EmptyTask.hpp"
+
 #include "impl\ThreadImpl.hpp"
 #include "impl\WinThreadImpl.hpp"
 
