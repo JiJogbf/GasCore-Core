@@ -6,11 +6,32 @@ namespace gas{
         class String;
     };
     
+    /**
+     * @brief Base class for all module classes
+     * in current project
+     */
     class Object{
     public:
+        /**
+         * @brief base ctor
+        */
         Object();
+        
+        /**
+         * @brief base ctor
+        */
         virtual ~Object();
+
+        /**
+         * @brief Converting this object to String
+         * repte
+        */
         virtual str::String* toString();
+
+        /**
+         * @brief Converting this object to String
+         * representation
+        */
         virtual Object* clone();
     };
 }
