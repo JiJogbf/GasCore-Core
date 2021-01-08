@@ -7,7 +7,7 @@
 namespace gas{
 namespace test{
 
-TextTestCase::TextTestCase(Logger* logger): TestCase(logger){}
+TextTestCase::TextTestCase(Logger* logger): RichTestCase("TextTestCase", logger){}
 
 void TextTestCase::textLengthHasExpectedValue(){
     gas::str::Text s = "hello world";
@@ -27,7 +27,7 @@ void TextTestCase::contentOfTextIsEqualToPassed(){
 void TextTestCase::execute(){
     textLengthHasExpectedValue();
     contentOfTextIsEqualToPassed();
-    mLogger->print("TextTestCase: pass");
+    RichTestCase::execute();
 }
 
 }

@@ -1,16 +1,14 @@
 #pragma once 
 
-#include <gas\test\TestCase.hpp>
+#include <gas\test\RichTestCase.hpp>
 #include <gas\test\Logger.hpp>
 
 namespace gas{
 namespace test{
   
-
-class ThreadTestCase: public gas::test::TestCase{
+class ThreadTestCase: public gas::test::RichTestCase{
 public:
     ThreadTestCase(Logger* logger);
-    ~ThreadTestCase() override;
     void execute() override;
 };
 

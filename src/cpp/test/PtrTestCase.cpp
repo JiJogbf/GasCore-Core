@@ -6,12 +6,12 @@
 namespace gas{
 namespace test{
 
-PtrTestCase::PtrTestCase(Logger* logger): TestCase(logger){}
+PtrTestCase::PtrTestCase(Logger* logger): RichTestCase("PtrTestCase", logger){}
 
 void PtrTestCase::execute(){
     gas::Ptr<Mock> ptr(new Mock(12));
     gas::Ptr<Mock> newPtr = ptr;
-    mLogger->print("PtrTestCase: pass");
+    RichTestCase::execute();
 }
 
 

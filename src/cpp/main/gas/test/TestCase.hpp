@@ -19,14 +19,7 @@ namespace gas{
          * and pass it in ctor
         */
         class TestCase: public Object{
-        protected:
-            Logger* mLogger;
         public:
-            /**
-             * @brief ctor
-            */
-            TestCase(Logger* logger);
-
             /**
              * @brief dtor
             */

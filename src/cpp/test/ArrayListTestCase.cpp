@@ -12,22 +12,19 @@ namespace gas{
 namespace test{
 
 ArrayListTestCase::ArrayListTestCase(Logger* logger):
-    TestCase(logger)
+    RichTestCase("ArrayListTestCase", logger)
 {}
 
 void ArrayListTestCase::execute(){
     gas::coll::ArrayList<gas::str::Text> list(4);
     list.add(new gas::str::Text("hello"));
     list.add(new gas::str::Text("world"));
-
-    assert(list.count() == 2 && "ArrayListTestCase: size has unexpected value!!");
-
-    for(int i = 0; i < list.count(); i++){
-        gas::str::Text* p = list.get(i);
-        assert(p != nullptr);
+    if(list.count() != 2){
+        fail();
+    }else{
+        pass();
     }
-
-    mLogger->print("ArrayListTestCase: pass");
+    RichTestCase::execute();
 }
 
 

@@ -5,12 +5,10 @@
 namespace gas{
 namespace test{
 
-MockTestCase::MockTestCase(Logger* logger): TestCase(logger){}
-
-MockTestCase::~MockTestCase(){}
+MockTestCase::MockTestCase(Logger* logger): RichTestCase("MockTestCase", logger){}
 
 void MockTestCase::execute(){
-    mLogger->print("MockTestCase: pass");
+    RichTestCase::execute();
 }
 
 }

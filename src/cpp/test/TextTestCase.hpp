@@ -1,12 +1,12 @@
 #pragma once 
 
-#include <gas\test\TestCase.hpp>
+#include <gas\test\RichTestCase.hpp>
 #include <gas\test\Logger.hpp>
 
 namespace gas{
 namespace test{
 
-class TextTestCase: public gas::test::TestCase{
+class TextTestCase: public gas::test::RichTestCase{
 private:
     void textLengthHasExpectedValue();
     void contentOfTextIsEqualToPassed();

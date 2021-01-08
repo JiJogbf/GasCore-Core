@@ -15,6 +15,8 @@ namespace gas{
          * or stop execution in unpredicted way
         */
         class SafeTestCase: public TestCaseDecorator{
+        private:
+            Logger* mLogger;
         public:
             SafeTestCase(TestCase* origin, Logger* logger);
 

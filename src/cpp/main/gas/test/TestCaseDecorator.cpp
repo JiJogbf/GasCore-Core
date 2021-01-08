@@ -3,8 +3,8 @@
 namespace gas{
 namespace test{
 
-TestCaseDecorator::TestCaseDecorator(TestCase* origin, Logger* logger): 
-    TestCase(logger), mOrigin(origin)
+TestCaseDecorator::TestCaseDecorator(TestCase* origin): 
+    TestCase(), mOrigin(origin)
 {}
 
 TestCaseDecorator::~TestCaseDecorator(){

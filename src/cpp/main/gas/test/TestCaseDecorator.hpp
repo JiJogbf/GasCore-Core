@@ -21,7 +21,7 @@ namespace gas{
              * @param origin wrapped TestCase
              * @param logger used logger
             */
-            TestCaseDecorator(TestCase* origin, Logger* logger);
+            TestCaseDecorator(TestCase* origin);
 
             /**
              * dtor

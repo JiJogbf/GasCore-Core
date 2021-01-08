@@ -1,14 +1,13 @@
 #pragma once
 
 #include <gas\test\Logger.hpp>
-#include <gas\test\TestCase.hpp>
+#include <gas\test\RichTestCase.hpp>
 
 namespace gas{
     namespace test{
-        class ArrayTestCase: public TestCase{
+        class ArrayTestCase: public RichTestCase{
         public:
             ArrayTestCase(Logger* logger);
-            ~ArrayTestCase();
             void execute() override;
         public:
             void creatingArrayStaticaly();

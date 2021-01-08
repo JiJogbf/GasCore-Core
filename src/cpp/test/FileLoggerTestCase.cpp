@@ -5,12 +5,11 @@
 namespace gas{
 namespace test{
 
-FileLoggerTestCase::FileLoggerTestCase(Logger* logger): TestCase(logger){}
-
-FileLoggerTestCase::~FileLoggerTestCase(){}
+FileLoggerTestCase::FileLoggerTestCase(Logger* logger): RichTestCase("FileLoggerTestCase", logger){}
 
 void FileLoggerTestCase::execute(){
     performLoggingAndCheckLoggedText();
+    RichTestCase::execute();
 }
 
 void FileLoggerTestCase::performLoggingAndCheckLoggedText(){

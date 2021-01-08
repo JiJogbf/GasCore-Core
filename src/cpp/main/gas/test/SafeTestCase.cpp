@@ -7,10 +7,12 @@ namespace gas{
 namespace test{
 
 SafeTestCase::SafeTestCase(TestCase* origin, Logger* logger):
-    TestCaseDecorator(origin, logger)
+    TestCaseDecorator(origin), mLogger(logger)
 {}
 
-SafeTestCase::~SafeTestCase(){}
+SafeTestCase::~SafeTestCase(){
+    mLogger = nullptr;
+}
 
 void SafeTestCase::execute(){
     try{

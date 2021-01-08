@@ -9,14 +9,13 @@ namespace gas{
 namespace test{
 
 
-ArrayTestCase::ArrayTestCase(Logger* logger): TestCase(logger){}
-
-ArrayTestCase::~ArrayTestCase(){}
+ArrayTestCase::ArrayTestCase(Logger* logger): RichTestCase("ArrayTestCase", logger){}
 
 void ArrayTestCase::execute(){
-    creatingArrayStaticaly();    
+    creatingArrayStaticaly();
     appendingElementsToArray();
     appendingRangeElements();
+    RichTestCase::execute();
 }
 
 void ArrayTestCase::creatingArrayStaticaly(){

@@ -19,17 +19,13 @@ void MyTask::execute(){
     }
 }
 
-ThreadTestCase::ThreadTestCase(Logger* logger): TestCase(logger){}
-
-ThreadTestCase::~ThreadTestCase(){}
+ThreadTestCase::ThreadTestCase(Logger* logger): RichTestCase("ThreadTestCase", logger){}
 
 void ThreadTestCase::execute(){
     gas::Thread thread(new MyTask());
     thread.start();
     thread.join();
-    // std::cout << "testThread: pass" << std::endl;
-    mLogger->print("ThredTestCase: pass");
-
+    RichTestCase::execute();
 }
 
 }

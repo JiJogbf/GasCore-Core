@@ -7,14 +7,12 @@
 namespace gas{
 namespace test{
 
-RefTestCase::RefTestCase(Logger* logger): TestCase(logger){}
-
-RefTestCase::~RefTestCase(){}
+RefTestCase::RefTestCase(Logger* logger): RichTestCase("RefTestCase", logger){}
 
 void RefTestCase::execute(){
     Mock mock(228);
     gas::Ref<Mock> m(mock);
-    mLogger->print("RefTestCase: pass");
+    RichTestCase::execute();
 }
 
 }
