@@ -30,6 +30,11 @@ public:
     Array<T>& set(const int index, const T& val);
     int length() const;
     int capacity() const;
+    // @todo: overload operators
+    // ==
+    // =
+    // +=
+    // []
 };
 
 template<class T> 
