@@ -15,6 +15,7 @@
 
 #include "MockTestCase.hpp"
 #include "RefTestCase.hpp"
+#include "PtrTestCase.hpp"
 #include "ThreadTestCase.hpp"
 
 
@@ -23,22 +24,10 @@
 #include <iostream>
 
 namespace test{
-
-
     void testText(){
         gas::str::Text s = "hello world";
         std::cout << s.content() << std::endl;
         std::cout << "testText: pass" << std::endl;
-    }
-
-    void testPtr(){
-        gas::Ptr<Mock> ptr(new Mock(12));
-        gas::Ptr<Mock> newPtr = ptr;
-        std::cout << "testPtr: pass" << std::endl;
-    }
-
-    void testThread(){
-
     }
 
     void testArrayList(){
@@ -55,8 +44,6 @@ namespace test{
 void runOldTests(){
     using namespace test;
     testText();
-    testPtr();
-    testThread();
     testArrayList();
 }
 
@@ -69,8 +56,9 @@ int main(int argc, char** argv){
     tester.add(new gas::test::ArrayTestCase(logger));
     tester.add(new gas::test::FileLoggerTestCase(logger));
     tester.add(new gas::test::RefTestCase(logger));
+    tester.add(new gas::test::PtrTestCase(logger));
     tester.add(new gas::test::ThreadTestCase(logger));
-    
+
     tester.run();
 
     return 0;
