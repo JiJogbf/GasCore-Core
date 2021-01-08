@@ -12,8 +12,8 @@ namespace coll{
 // and initialize memory in ctor init. list
 
 template<class T>
-private:
 class ArrayList: public List<T>{
+private:
     T** mItems;
     int mCount;
     int mCapacity;
