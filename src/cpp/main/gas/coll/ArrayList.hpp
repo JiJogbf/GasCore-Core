@@ -8,15 +8,18 @@ namespace coll{
 
 // @todo: Replace raw ptr's to Ptr<T> classes
 
+// @todo: move mCapacity to most up level of class 
+// and initialize memory in ctor init. list
+
 template<class T>
-class ArrayList: public List<T>{
 private:
+class ArrayList: public List<T>{
     T** mItems;
     int mCount;
     int mCapacity;
 public:
-    ArrayList(int capacity);
     ~ArrayList();
+    ArrayList(int capacity);
     int count() override;
     void add(T* obj) override;
     void remove(T* obj) override;
