@@ -1,25 +1,17 @@
 #include <gas/str/Text.hpp>
-#include <gas/Ptr.hpp>
-#include <gas/Ref.hpp>
-#include <gas/Thread.hpp>
-#include <gas/Task.hpp>
 #include <gas/coll/ArrayList.hpp>
 #include <gas/coll/Array.hpp>
 #include <gas/test/Tester.hpp>
 #include <gas/test/TestCase.hpp>
-#include <gas/test/TestCaseDecorator.hpp>
 #include <gas/test/Logger.hpp>
 #include <gas/test/FileLogger.hpp>
+
 #include "ArrayTestCase.hpp"
 #include "FileLoggerTestCase.hpp"
-
 #include "MockTestCase.hpp"
 #include "RefTestCase.hpp"
 #include "PtrTestCase.hpp"
 #include "ThreadTestCase.hpp"
-
-
-#include "Mock.hpp"
 
 #include <iostream>
 
