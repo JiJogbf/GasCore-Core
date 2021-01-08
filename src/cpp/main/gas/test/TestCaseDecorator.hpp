@@ -27,6 +27,7 @@ namespace gas{
              * dtor
             */
             ~TestCaseDecorator() override;
+            
             /**
              * entry point of test case
             */

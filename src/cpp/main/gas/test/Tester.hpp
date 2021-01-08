@@ -37,7 +37,7 @@ namespace gas{
             /**
              * @brief dtor
              */
-            ~Tester();
+            ~Tester(); 
 
             /**
              * @brief Adding test case to list of execution
