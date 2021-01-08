@@ -14,21 +14,13 @@
 #include "FileLoggerTestCase.hpp"
 
 #include "MockTestCase.hpp"
+#include "RefTestCase.hpp"
+
+#include "Mock.hpp"
 
 #include <iostream>
 
 namespace test{
-    struct Mock{
-        int data;
-        Mock(int data): data(data){
-            std::cout << "Mock()" << std::endl;
-        }
-        
-        ~Mock(){
-            std::cout << "~Mock()" << std::endl;
-        }
-    };
-
     class MyTask: public gas::Task{
         // @todo: adding logger
     public:
@@ -71,19 +63,12 @@ namespace test{
         }
         std::cout << "testArrayList: pass" << std::endl;
     }
-
-    void testRef(){
-        Mock mock(228);
-        gas::Ref<Mock> m(mock);
-        std::cout << "testRef: pass" << std::endl;
-    }
 }
 
 void runOldTests(){
     using namespace test;
     testText();
     testPtr();
-    testRef();
     testThread();
     testArrayList();
 }
@@ -96,6 +81,7 @@ int main(int argc, char** argv){
     tester.add(new gas::test::MockTestCase(logger));
     tester.add(new gas::test::ArrayTestCase(logger));
     tester.add(new gas::test::FileLoggerTestCase(logger));
+    tester.add(new gas::test::RefTestCase(logger));
     tester.run();
 
     return 0;
