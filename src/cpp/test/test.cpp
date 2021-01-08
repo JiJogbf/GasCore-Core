@@ -77,11 +77,6 @@ namespace test{
         gas::Ref<Mock> m(mock);
         std::cout << "testRef: pass" << std::endl;
     }
-
-    void testArray(){
-        gas::coll::Array<int> arr(10);
-        arr.add(1).add(2).add(3);
-    }
 }
 
 void runOldTests(){
@@ -89,7 +84,6 @@ void runOldTests(){
     testText();
     testPtr();
     testRef();
-    testArray();
     testThread();
     testArrayList();
 }
