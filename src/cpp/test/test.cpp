@@ -82,11 +82,6 @@ namespace test{
         gas::coll::Array<int> arr(10);
         arr.add(1).add(2).add(3);
     }
-
-    void testTester(){
-        gas::test::Tester tester;
-        tester.add(new gas::test::MockTestCase(nullptr));
-    }
 }
 
 void runOldTests(){
@@ -97,7 +92,6 @@ void runOldTests(){
     testArray();
     testThread();
     testArrayList();
-    testTester();
 }
 
 int main(int argc, char** argv){
@@ -105,6 +99,7 @@ int main(int argc, char** argv){
  
     gas::test::Logger* logger = new gas::test::FileLogger("result.log");
     gas::test::Tester tester(logger);
+    tester.add(new gas::test::MockTestCase(logger));
     tester.add(new gas::test::ArrayTestCase(logger));
     tester.add(new gas::test::FileLoggerTestCase(logger));
     tester.run();
