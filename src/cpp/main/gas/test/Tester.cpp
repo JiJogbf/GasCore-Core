@@ -2,6 +2,8 @@
 
 #include "NullLogger.hpp"
 
+#include "SafeTestCase.hpp"
+
 namespace gas{
 namespace test{
 
@@ -21,8 +23,8 @@ Tester::~Tester(){
     }
 }
 
-void Tester::add(TestCase* inCase){
-    mCases.push_back(inCase);
+void Tester::add(TestCase* inCase){   
+    mCases.push_back(new SafeTestCase(inCase, mLogger));
 }
 
 void Tester::run(){
