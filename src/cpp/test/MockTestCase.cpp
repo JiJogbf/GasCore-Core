@@ -8,7 +8,7 @@ MockTestCase::MockTestCase(Logger* logger): TestCase(logger){}
 MockTestCase::~MockTestCase(){}
 
 void MockTestCase::execute(){
-    mLogger->print("MockTestCase.execute()");
+    mLogger->print("MockTestCase: pass");
 }
 
 }
