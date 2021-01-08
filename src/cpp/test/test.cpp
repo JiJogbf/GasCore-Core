@@ -15,25 +15,15 @@
 
 #include "MockTestCase.hpp"
 #include "RefTestCase.hpp"
+#include "ThreadTestCase.hpp"
+
 
 #include "Mock.hpp"
 
 #include <iostream>
 
 namespace test{
-    class MyTask: public gas::Task{
-        // @todo: adding logger
-    public:
-        void execute() override;
-    };
 
-    void MyTask::execute(){
-        int i = 0; 
-        int iterationsCount = 100;
-        while (i < iterationsCount) {
-            i++;
-        }
-    }
 
     void testText(){
         gas::str::Text s = "hello world";
@@ -48,10 +38,7 @@ namespace test{
     }
 
     void testThread(){
-        gas::Thread thread(new MyTask());
-        thread.start();
-        thread.join();
-        std::cout << "testThread: pass" << std::endl;
+
     }
 
     void testArrayList(){
@@ -82,6 +69,8 @@ int main(int argc, char** argv){
     tester.add(new gas::test::ArrayTestCase(logger));
     tester.add(new gas::test::FileLoggerTestCase(logger));
     tester.add(new gas::test::RefTestCase(logger));
+    tester.add(new gas::test::ThreadTestCase(logger));
+    
     tester.run();
 
     return 0;
