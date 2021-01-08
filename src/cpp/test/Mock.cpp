@@ -4,9 +4,15 @@
 #include <iostream>
 
 Mock::Mock(int data): data(data){
-    std::cout << "Mock()" << std::endl;
+    // @todo: add some flag if you need watch status of
+    // mock variable
+
+    // std::cout << "Mock()" << std::endl;
 }
 
 Mock::~Mock(){
-    std::cout << "~Mock()" << std::endl;
+    // @todo: add some flag if you need watch status of
+    // mock variable
+    
+    // std::cout << "~Mock()" << std::endl;
 }
