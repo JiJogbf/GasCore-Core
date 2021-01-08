@@ -16,7 +16,6 @@ Tester::Tester(): Tester(new NullLogger()){
 
 Tester::~Tester(){
     for(int i = 0; i < mCases.size(); i++){
-        // TestCase* c = ;
         delete mCases[i];
         mCases[i] = nullptr;
     }
@@ -28,9 +27,7 @@ void Tester::add(TestCase* inCase){
 
 void Tester::run(){
     for(int i = 0; i < mCases.size(); i++){
-        // TestCase* p = 
         mCases[i]->execute();
-        // p->execute();
     }
 }
 
