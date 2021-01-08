@@ -13,24 +13,11 @@
 #include "ArrayTestCase.hpp"
 #include "FileLoggerTestCase.hpp"
 
+#include "MockTestCase.hpp"
+
 #include <iostream>
 
 namespace test{
-    class MockTestCase: public gas::test::TestCase{
-    public:
-        MockTestCase();
-        ~MockTestCase() override;
-        void execute() override;
-    };
-
-    MockTestCase::MockTestCase(): TestCase(nullptr){}
-    
-    MockTestCase::~MockTestCase(){}
-    
-    void MockTestCase::execute(){
-        std::cout << "MockTestCase.execute()" << std::endl;
-    }
-
     struct Mock{
         int data;
         Mock(int data): data(data){
@@ -43,6 +30,7 @@ namespace test{
     };
 
     class MyTask: public gas::Task{
+        // @todo: adding logger
     public:
         void execute() override;
     };
@@ -50,12 +38,9 @@ namespace test{
     void MyTask::execute(){
         int i = 0; 
         int iterationsCount = 100;
-        // std::cout << "Thread started" << std::endl;
         while (i < iterationsCount) {
             i++;
-            // std::cout << "i = " << i << std::endl;
         }
-        // std::cout << "Thread finished" << std::endl;
     }
 
     void testText(){
@@ -100,7 +85,7 @@ namespace test{
 
     void testTester(){
         gas::test::Tester tester;
-        tester.add(new MockTestCase());
+        tester.add(new gas::test::MockTestCase(nullptr));
     }
 }
 

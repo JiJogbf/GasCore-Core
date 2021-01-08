@@ -16,6 +16,7 @@ void FileLoggerTestCase::execute(){
 void FileLoggerTestCase::performLoggingAndCheckLoggedText(){
     FileLogger logger("test.log");
     logger.print("hello world!");
+    // @todo: delete test.log externaly
 }
 
 }
