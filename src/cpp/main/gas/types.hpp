@@ -1,5 +1,5 @@
-#ifndef GAS_TYPES_HPP
-#define GAS_TYPES_HPP
+#ifndef GAS_TYPES_HPP_23012021_152332
+#define GAS_TYPES_HPP_23012021_152332
 
 #include <cstdint>
 #include <string>
