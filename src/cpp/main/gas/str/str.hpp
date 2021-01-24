@@ -8,6 +8,8 @@
 namespace gas{
 namespace str{
 
+class StrEditor;
+
 class Str: public Object{
 private:
     char_p buffer;
@@ -19,8 +21,9 @@ public:
     operator char_cp() const;
     operator std::string() const;
     Str& operator=(const Str& source);
-    // operator=(const Str& str)
-    // operator +=(const Str& str) 
+    int       size() const;
+    char_cp   content() const;
+    StrEditor* edit();
 };
 
 }

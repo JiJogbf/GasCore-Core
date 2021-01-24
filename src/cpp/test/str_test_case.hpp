@@ -9,6 +9,8 @@ namespace gas{
         public:
             StrTestCase(Logger* logger);
             void execute() override;       
+        public:
+            bool editing();
         };
     }
 }
