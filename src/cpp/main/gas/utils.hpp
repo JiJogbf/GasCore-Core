@@ -5,6 +5,7 @@
 
 namespace gas{
     void todo(char_cp text);
+    int int_abs(int value);
 }
 
 #endif 
