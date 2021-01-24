@@ -3,6 +3,8 @@
 #include "..\types.hpp"
 #include "..\Object.hpp"
 
+#include <string>
+
 namespace gas{
 namespace str{
 
@@ -12,8 +14,10 @@ private:
     int    cap;
 public:
     Str(char_cp s);
+    Str(const std::string& source);
     ~Str();
     operator char_cp() const;
+    operator std::string() const;
     Str& operator=(const Str& source);
     // operator=(const Str& str)
     // operator +=(const Str& str) 

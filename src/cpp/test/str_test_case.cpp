@@ -21,12 +21,12 @@ void StrTestCase::execute(){
     try{
         {
             gas::str::Str s = "Hello world";    
-            mLogger->print(std::string(s));
+            mLogger->print(s);
         }
 
         {
             gas::str::Str* s = new gas::str::Str("Heap Hello world") ;    
-            mLogger->print(std::string(*s));
+            mLogger->print(*s);
             delete s;
         }
        

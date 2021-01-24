@@ -12,6 +12,8 @@ Str::Str(char_cp s): Object(), buffer(nullptr), cap(0){
     strcpy(this->buffer, s);
 }
 
+Str::Str(const std::string& source): Str(source.c_str()){}
+
 Str::~Str(){
     delete[] buffer;
     cap = 0;
@@ -19,6 +21,10 @@ Str::~Str(){
 
 Str::operator char_cp() const{
     return buffer;
+}
+
+Str::operator std::string() const{
+    return std::string(buffer);
 }
 
 Str& Str::operator=(const Str& source){
