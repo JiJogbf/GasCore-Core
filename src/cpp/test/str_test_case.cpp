@@ -77,8 +77,6 @@ bool StrTestCase::editing(){
         }else if(strcmp(s.content(), "test first second") != 0){
             mLogger->print("second content check has not expected values!");
             failed = true;
-        }else{
-            // 
         }
     }
     return failed;
