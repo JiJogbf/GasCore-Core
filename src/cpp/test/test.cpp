@@ -11,6 +11,7 @@
 #include "ArrayTestCase.hpp"
 #include "ArrayListTestCase.hpp"
 #include "TextTestCase.hpp"
+#include "str_test_case.hpp"
 
 #include <iostream>
 
@@ -25,6 +26,7 @@ int main(int argc, char** argv){
     tester.add(new gas::test::ArrayTestCase(logger));
     tester.add(new gas::test::ArrayListTestCase(logger));
     tester.add(new gas::test::TextTestCase(logger));
+    tester.add(new gas::test::StrTestCase(logger));
 
     tester.run();
 

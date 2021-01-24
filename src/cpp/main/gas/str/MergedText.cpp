@@ -12,6 +12,11 @@ MergedText::~MergedText(){
 
 }
 
+MergedText* MergedText::add(String* s){
+    
+    return this;
+}
+
 int MergedText::length() const{
     return 0; // @todo: create implementation
 }

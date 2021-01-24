@@ -5,11 +5,10 @@
 namespace gas{
     namespace str{
         class MergedText: public String{
-        private: 
-            // gas::coll::Array<Ptr<String>> mItems;
         public:
-            MergedText(/*items*/);
+            MergedText();
             ~MergedText() override;
+            virtual MergedText* add(String* s);
             int length() const override;
             char_p content() const override;
         };
